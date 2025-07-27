@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify, send_file
+from flask import send_from_directory
 import os
 import cv2
 import numpy as np
@@ -910,6 +911,11 @@ def test_video():
             return jsonify({'error': 'Test video not found'})
     except Exception as e:
         return jsonify({'error': str(e)})
+
+@app.route('/uploads/<path:filename>')
+def uploaded_file(filename):
+    uploads_dir = os.path.join(app.root_path, 'uploads')
+    return send_from_directory(uploads_dir, filename)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
