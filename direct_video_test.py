@@ -5,7 +5,7 @@ import os
 sys.path.append(os.getcwd())
 
 # Import the video processing function
-from app import process_video
+from TrafficVision.api.index import process_video
 
 def test_video_processing():
     """Test video processing directly"""
