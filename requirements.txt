@@ -1,7 +1,6 @@
 flask
+ultralytics
+torch
 opencv-python
 numpy
-pillow
-werkzeug
-# The following is for the YOLO CLI (Ultralytics YOLO, required for subprocess calls)
-ultralytics 
+Pillow
