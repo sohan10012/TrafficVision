@@ -376,24 +376,25 @@
       }
       
       .card-body {
-        padding: 60px 40px;
+        padding: 40px;
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         background: var(--white);
+        min-height: 0;
       }
       
       .upload-section {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 32px;
       }
       
       .upload-area {
         border: 4px dashed var(--accent-red);
         border-radius: 30px;
-        padding: 100px 50px;
-        margin: 50px 0;
+        padding: 60px 40px;
+        margin: 24px 0;
         background: var(--gradient-light);
         transition: var(--transition);
         cursor: pointer;
@@ -436,9 +437,9 @@
       }
       
       .upload-icon {
-        font-size: 6rem;
+        font-size: 4rem;
         color: var(--accent-red);
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         display: inline-block;
         animation: float 3s ease-in-out infinite;
         transition: all 0.3s ease;
@@ -455,15 +456,15 @@
       }
       
       .upload-text {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
         color: var(--primary-dark);
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         font-weight: 600;
         font-family: "Poppins", sans-serif;
       }
       
       .upload-hint {
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: var(--text-light);
         font-weight: 400;
         line-height: 1.6;
@@ -476,33 +477,31 @@
       
       .btn-group {
         display: flex;
-        gap: 25px;
+        gap: 20px;
         justify-content: center;
         flex-wrap: wrap;
-        margin: 40px 0;
+        margin: 24px 0;
       }
       
       .btn {
         background: var(--gradient-primary);
         color: var(--white);
         border: none;
-        padding: 22px 45px;
-        border-radius: 25px;
-        font-size: 1.2rem;
+        padding: 16px 32px;
+        border-radius: 20px;
+        font-size: 1.1rem;
         font-weight: 600;
         cursor: pointer;
         transition: var(--transition);
         box-shadow: 0 15px 35px var(--shadow);
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 12px;
         position: relative;
         overflow: hidden;
-        min-width: 180px;
+        min-width: 160px;
         justify-content: center;
         font-family: "Poppins", sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 1px;
       }
       
       .btn::before {
@@ -544,13 +543,13 @@
       }
       
       .btn:hover {
-        transform: translateY(-5px) scale(1.05);
+        transform: translateY(-2px);
         box-shadow: 0 25px 50px var(--shadow-dark);
         background: var(--gradient-accent);
       }
       
       .btn:active {
-        transform: translateY(-2px) scale(1.02);
+        transform: translateY(0);
       }
       
       .btn:disabled {
@@ -560,10 +559,15 @@
         box-shadow: 0 8px 20px var(--shadow);
         background: linear-gradient(135deg, #666, #999);
       }
-      
+
       .btn:disabled:hover {
         transform: none;
         box-shadow: 0 8px 20px var(--shadow);
+      }
+
+      .btn:disabled::before,
+      .btn:disabled::after {
+        display: none;
       }
       
       .btn-secondary {
@@ -596,26 +600,26 @@
       .loading {
         display: none;
         text-align: center;
-        margin: 60px 0;
-        padding: 60px;
+        margin: 32px 0;
+        padding: 32px;
       }
       
       .loading-content {
         background: var(--gradient-light);
         border: 3px solid var(--accent-red);
-        border-radius: 30px;
-        padding: 60px;
+        border-radius: 25px;
+        padding: 40px;
         box-shadow: 0 20px 40px var(--shadow);
       }
       
       .spinner {
-        width: 80px;
-        height: 80px;
-        border: 6px solid var(--light-gray);
-        border-top: 6px solid var(--accent-red);
+        width: 48px;
+        height: 48px;
+        border: 4px solid var(--light-gray);
+        border-top: 4px solid var(--accent-red);
         border-radius: 50%;
         animation: spin 1s linear infinite;
-        margin: 0 auto 30px;
+        margin: 0 auto 20px;
       }
       
       @keyframes spin {
@@ -624,27 +628,27 @@
       }
       
       .loading-text {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         color: var(--primary-dark);
-        font-weight: 700;
-        margin-bottom: 15px;
+        font-weight: 600;
+        margin-bottom: 8px;
         font-family: "Orbitron", monospace;
       }
       
       .loading-subtext {
         color: var(--primary-red);
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 500;
         margin-bottom: 20px;
       }
       
       .progress-bar {
         width: 100%;
-        height: 10px;
+        height: 8px;
         background: var(--light-gray);
-        border-radius: 10px;
+        border-radius: 4px;
         overflow: hidden;
-        margin: 30px 0;
+        margin: 16px 0;
         box-shadow: inset 0 2px 4px var(--shadow);
       }
       
@@ -653,7 +657,7 @@
         background: var(--gradient-primary);
         width: 0%;
         transition: width 0.3s ease;
-        border-radius: 10px;
+        border-radius: 4px;
         position: relative;
       }
       
@@ -675,14 +679,14 @@
       
       .results {
         display: none;
-        margin-top: 60px;
-        animation: fadeInUp 0.8s ease-out;
+        margin-top: 32px;
+        animation: fadeInUp 0.6s ease-out;
       }
       
       @keyframes fadeInUp {
         from {
           opacity: 0;
-          transform: translateY(50px);
+          transform: translateY(30px);
         }
         to {
           opacity: 1;
@@ -693,37 +697,37 @@
       .result-card {
         background: var(--gradient-light);
         border: 3px solid var(--accent-red);
-        border-radius: 30px;
-        padding: 50px;
-        margin: 30px 0;
+        border-radius: 25px;
+        padding: 32px;
+        margin: 20px 0;
         box-shadow: 0 20px 40px var(--shadow);
         transition: var(--transition);
       }
       
       .result-card:hover {
-        transform: translateY(-6px) scale(1.02);
+        transform: translateY(-4px);
         box-shadow: 0 30px 60px var(--shadow-dark);
       }
       
       .result-header {
         display: flex;
         align-items: center;
-        gap: 25px;
-        margin-bottom: 30px;
-        padding-bottom: 25px;
-        border-bottom: 3px solid var(--accent-red);
+        gap: 16px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid var(--accent-red);
       }
       
       .result-icon {
-        width: 70px;
-        height: 70px;
+        width: 48px;
+        height: 48px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: var(--white);
-        box-shadow: 0 10px 25px var(--shadow);
+        box-shadow: 0 8px 20px var(--shadow);
       }
       
       .result-icon.success {
@@ -735,34 +739,34 @@
       }
       
       .result-title {
-        font-size: 2rem;
-        font-weight: 800;
+        font-size: 1.5rem;
+        font-weight: 700;
         color: var(--primary-dark);
-        margin-bottom: 8px;
+        margin-bottom: 4px;
         font-family: "Orbitron", monospace;
       }
       
       .result-subtitle {
         color: var(--primary-red);
         font-weight: 500;
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       
       .stats {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 30px;
-        margin: 40px 0;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        margin: 24px 0;
       }
       
       .stat-card {
         background: var(--white);
         border: 3px solid var(--accent-red);
-        padding: 40px;
-        border-radius: 25px;
+        padding: 20px;
+        border-radius: var(--border-radius);
         text-align: center;
-        box-shadow: 0 15px 30px var(--shadow);
-        transition: transform 0.3s ease;
+        box-shadow: 0 8px 20px var(--shadow);
+        transition: var(--transition);
         position: relative;
         overflow: hidden;
       }
@@ -773,60 +777,63 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
+        height: 3px;
         background: var(--gradient-primary);
       }
       
       .stat-card:hover {
-        transform: translateY(-8px) scale(1.05);
-        box-shadow: 0 25px 50px var(--shadow-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px var(--shadow-dark);
       }
       
       .stat-number {
-        font-size: 3rem;
-        font-weight: 900;
+        font-size: 2rem;
+        font-weight: 800;
         color: var(--primary-dark);
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        line-height: 1;
         font-family: "Orbitron", monospace;
       }
       
       .stat-label {
         color: var(--primary-red);
-        font-weight: 600;
-        font-size: 1.1rem;
+        font-weight: 500;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
       }
       
       .result-image {
         max-width: 100%;
-        border-radius: 25px;
-        box-shadow: 0 25px 50px var(--shadow-dark);
-        margin: 30px 0;
-        border: 5px solid var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: 0 15px 30px var(--shadow-dark);
+        margin: 20px 0;
+        border: 3px solid var(--white);
         transition: var(--transition);
       }
       
       .result-image:hover {
         transform: scale(1.02);
-        box-shadow: 0 40px 80px var(--shadow-dark);
+        box-shadow: 0 25px 50px var(--shadow-dark);
       }
       
       .predictions {
         background: var(--white);
         border: 2px solid var(--accent-red);
-        border-radius: 25px;
-        padding: 40px;
-        margin: 30px 0;
-        box-shadow: 0 15px 30px var(--shadow);
+        border-radius: var(--border-radius);
+        padding: 24px;
+        margin: 20px 0;
+        box-shadow: 0 8px 20px var(--shadow);
       }
       
       .predictions h3 {
-        font-size: 1.8rem;
-        font-weight: 800;
-        margin-bottom: 30px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 16px;
         color: var(--primary-dark);
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 12px;
         font-family: "Orbitron", monospace;
       }
       
@@ -834,18 +841,18 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 25px;
-        margin: 20px 0;
+        padding: 16px 20px;
+        margin: 12px 0;
         background: var(--gradient-light);
-        border-radius: 20px;
-        border-left: 6px solid var(--primary-dark);
+        border-radius: 12px;
+        border-left: 4px solid var(--primary-dark);
         transition: var(--transition);
-        box-shadow: 0 8px 20px var(--shadow);
+        box-shadow: 0 4px 8px var(--shadow);
       }
       
       .prediction-item:hover {
-        transform: translateX(10px) scale(1.02);
-        box-shadow: 0 15px 35px var(--shadow-dark);
+        transform: translateX(8px);
+        box-shadow: 0 8px 20px var(--shadow-dark);
       }
       
       .prediction-item.red { border-left-color: var(--danger); }
@@ -853,49 +860,48 @@
       .prediction-item.yellow { border-left-color: var(--warning); }
       
       .class-name {
-        font-weight: 700;
+        font-weight: 600;
         color: var(--primary-dark);
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         display: flex;
         align-items: center;
         gap: 12px;
-        font-family: "Poppins", sans-serif;
       }
       
       .confidence {
         background: var(--gradient-primary);
         color: var(--white);
-        padding: 12px 25px;
-        border-radius: 30px;
-        font-weight: 700;
-        font-size: 1.1rem;
-        box-shadow: 0 8px 20px var(--shadow);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 8px var(--shadow);
         font-family: "Orbitron", monospace;
       }
       
       .traffic-light-summary {
-        margin: 3rem 0;
-        padding: 2.5rem;
+        margin: 24px 0;
+        padding: 24px;
         background: var(--white);
-        border-radius: 25px;
-        border: 3px solid var(--accent-red);
-        box-shadow: 0 15px 30px var(--shadow);
+        border-radius: var(--border-radius);
+        border: 2px solid var(--accent-red);
+        box-shadow: 0 8px 20px var(--shadow);
       }
       
       .traffic-light-summary h3 {
-        margin: 0 0 2rem 0;
+        margin: 0 0 16px 0;
         color: var(--primary-dark);
-        font-size: 1.6rem;
-        font-weight: 800;
-        font-family: "Orbitron", monospace;
+        font-size: 1.25rem;
+        font-weight: 700;
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 12px;
+        font-family: "Orbitron", monospace;
       }
       
       .light-counts {
         display: flex;
-        gap: 2.5rem;
+        gap: 16px;
         justify-content: center;
         flex-wrap: wrap;
       }
@@ -903,73 +909,67 @@
       .light-count {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        padding: 1.2rem 2rem;
-        border-radius: 20px;
-        font-weight: 700;
-        font-size: 1.2rem;
-        box-shadow: 0 8px 20px var(--shadow);
-        transition: transform 0.3s ease;
+        gap: 8px;
+        padding: 12px 20px;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        box-shadow: 0 4px 8px var(--shadow);
+        transition: var(--transition);
       }
       
       .light-count:hover {
-        transform: translateY(-3px) scale(1.05);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px var(--shadow-dark);
       }
       
-      .light-count.red {
+      .light-count.red { 
         background: rgba(239, 68, 68, 0.1);
         color: var(--danger);
-        border: 3px solid rgba(239, 68, 68, 0.3);
+        border: 2px solid rgba(239, 68, 68, 0.3);
       }
       
-      .light-count.yellow {
+      .light-count.yellow { 
         background: rgba(251, 191, 36, 0.1);
         color: var(--warning);
-        border: 3px solid rgba(251, 191, 36, 0.3);
+        border: 2px solid rgba(251, 191, 36, 0.3);
       }
       
-      .light-count.green {
+      .light-count.green { 
         background: rgba(74, 222, 128, 0.1);
         color: var(--success);
-        border: 3px solid rgba(74, 222, 128, 0.3);
-      }
-      
-      .light-count i {
-        font-size: 1.2rem;
+        border: 2px solid rgba(74, 222, 128, 0.3);
       }
       
       .frame-info {
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: var(--text-light);
-        margin-top: 0.8rem;
-        font-weight: 500;
+        margin-top: 4px;
         font-family: 'Orbitron', monospace;
       }
       
       .message {
-        padding: 30px;
-        border-radius: 20px;
-        margin: 30px 0;
+        padding: 20px;
+        border-radius: var(--border-radius);
+        margin: 16px 0;
         display: flex;
         align-items: center;
-        gap: 20px;
-        font-weight: 600;
-        font-size: 1.2rem;
-        box-shadow: 0 15px 30px var(--shadow);
+        gap: 12px;
+        font-weight: 500;
+        font-size: 1.1rem;
+        box-shadow: 0 8px 20px var(--shadow);
       }
       
       .message.success {
         background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(34, 197, 94, 0.1));
         color: var(--success);
-        border-left: 6px solid var(--success);
-        border: 3px solid rgba(74, 222, 128, 0.3);
+        border: 2px solid rgba(74, 222, 128, 0.2);
       }
       
       .message.error {
         background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
         color: var(--danger);
-        border-left: 6px solid var(--danger);
-        border: 3px solid rgba(239, 68, 68, 0.3);
+        border: 2px solid rgba(239, 68, 68, 0.2);
       }
       
       /* Results Gallery Styles */
@@ -983,7 +983,7 @@
       
       .gallery-title {
         font-family: "Orbitron", monospace;
-        font-size: 4.5rem;
+        font-size: 2.5rem;
         font-weight: 800;
         background: var(--gradient-primary);
         -webkit-background-clip: text;
@@ -991,12 +991,11 @@
         background-clip: text;
         margin: 60px 0 32px 0;
         text-align: center;
-        letter-spacing: -2px;
+        letter-spacing: -1px;
         display: flex;
         align-items: center;
-        gap: 25px;
+        gap: 16px;
         justify-content: center;
-        text-shadow: 2px 2px 4px var(--shadow);
       }
 
       .gallery-title i {
@@ -1006,8 +1005,8 @@
       
       .gallery-images {
         display: flex;
-        gap: 40px;
-        margin-bottom: 60px;
+        gap: 24px;
+        margin-bottom: 40px;
         justify-content: center;
         width: 100%;
       }
@@ -1016,9 +1015,9 @@
         width: 30%;
         min-width: 200px;
         max-width: 400px;
-        border-radius: 25px;
-        box-shadow: 0 25px 50px var(--shadow-dark);
-        border: 5px solid var(--white);
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 15px 30px var(--shadow-dark);
+        border: 3px solid var(--white);
         object-fit: cover;
         aspect-ratio: 4/3;
         background: var(--white);
@@ -1027,13 +1026,13 @@
       
       .gallery-images img:hover {
         transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 40px 80px var(--shadow-dark);
+        box-shadow: 0 25px 50px var(--shadow-dark);
       }
       
       .gallery-videos {
         display: flex;
         flex-direction: column;
-        gap: 50px;
+        gap: 32px;
         align-items: center;
         width: 100%;
       }
@@ -1042,16 +1041,16 @@
         width: 60%;
         min-width: 300px;
         max-width: 600px;
-        border-radius: 25px;
-        box-shadow: 0 25px 50px var(--shadow-dark);
-        border: 5px solid var(--white);
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 15px 30px var(--shadow-dark);
+        border: 3px solid var(--white);
         background: #000;
         transition: var(--transition);
       }
       
       .gallery-videos video:hover {
         transform: scale(1.02);
-        box-shadow: 0 40px 80px var(--shadow-dark);
+        box-shadow: 0 25px 50px var(--shadow-dark);
       }
       
       /* Responsive Design */
@@ -1090,9 +1089,9 @@
         }
         
         .info-panel h1 {
-          font-size: 2.5rem;
+          font-size: 2.2rem;
           flex-direction: column;
-          gap: 15px;
+          gap: 8px;
         }
 
         .info-panel h1 i {
@@ -1100,7 +1099,7 @@
         }
         
         .card-header {
-          padding: 40px 20px;
+          padding: 24px 20px;
         }
 
         .card-header h2 {
@@ -1108,11 +1107,11 @@
         }
         
         .card-body {
-          padding: 40px 20px;
+          padding: 24px 20px;
         }
         
         .upload-area {
-          padding: 80px 40px;
+          padding: 40px 16px;
         }
         
         .btn-group {
@@ -1126,11 +1125,7 @@
         
         .stats {
           grid-template-columns: repeat(2, 1fr);
-          gap: 20px;
-        }
-
-        .stat-card {
-          padding: 30px 20px;
+          gap: 12px;
         }
         
         .gallery-images {
@@ -1153,9 +1148,9 @@
         }
 
         .gallery-title {
-          font-size: 3rem;
+          font-size: 2rem;
           flex-direction: column;
-          gap: 15px;
+          gap: 8px;
         }
 
         .light-counts {
@@ -1166,23 +1161,23 @@
       
       @media (max-width: 480px) {
         .info-panel h1 {
-          font-size: 2rem;
-        }
-        
-        .card-header h2 {
           font-size: 1.8rem;
         }
         
+        .card-header h2 {
+          font-size: 1.5rem;
+        }
+        
         .upload-area {
-          padding: 60px 20px;
+          padding: 32px 12px;
         }
         
         .upload-icon {
-          font-size: 4rem;
+          font-size: 3rem;
         }
         
         .upload-text {
-          font-size: 1.4rem;
+          font-size: 1.1rem;
         }
         
         .stats {
@@ -1190,7 +1185,7 @@
         }
 
         .gallery-title {
-          font-size: 2.5rem;
+          font-size: 1.8rem;
         }
       }
       
@@ -1220,14 +1215,14 @@
       /* Video container styles */
       .video-container {
         text-align: center;
-        margin: 40px 0;
+        margin: 20px 0;
       }
       
       .video-player {
         max-width: 100%;
-        border-radius: 25px;
-        box-shadow: 0 25px 50px var(--shadow-dark);
-        border: 5px solid var(--white);
+        border-radius: var(--border-radius);
+        box-shadow: 0 15px 30px var(--shadow-dark);
+        border: 3px solid var(--white);
         background: #000;
       }
       
@@ -1247,17 +1242,17 @@
       
       /* Custom scrollbar */
       ::-webkit-scrollbar {
-        width: 12px;
+        width: 8px;
       }
       
       ::-webkit-scrollbar-track {
         background: var(--light-gray);
-        border-radius: 6px;
+        border-radius: 4px;
       }
       
       ::-webkit-scrollbar-thumb {
         background: var(--gradient-primary);
-        border-radius: 6px;
+        border-radius: 4px;
       }
       
       ::-webkit-scrollbar-thumb:hover {
@@ -1356,17 +1351,17 @@
     <div class="results-gallery">
       <div class="gallery-title"><i class="fas fa-chart-bar"></i> Results Gallery</div>
       <div class="gallery-images">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Traffic Analysis Result 1" />
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Traffic Analysis Result 2" />
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Traffic Analysis Result 3" />
+        <img src="uploads/download.jpg" alt="Traffic Analysis Result 1" />
+        <img src="uploads/2.jpg" alt="Traffic Analysis Result 2" />
+        <img src="uploads/3.jpg" alt="Traffic Analysis Result 3" />
       </div>
       <div class="gallery-videos">
-        <video controls poster="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80">
-          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+        <video autoplay muted loop>
+          <source src="uploads/Result1.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <video controls poster="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80">
-          <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+        <video autoplay muted loop>
+          <source src="uploads/Result2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -1487,7 +1482,7 @@
         
         if (data.type === "image") {
           resultContent.innerHTML = `
-            <div class="result-card fade-in-up">
+            <div class="result-card">
               <div class="result-header">
                 <div class="result-icon success">
                   <i class="fas fa-check"></i>
@@ -1539,7 +1534,7 @@
           const predictions = data.predictions || [];
           
           resultContent.innerHTML = `
-            <div class="result-card fade-in-up">
+            <div class="result-card">
               <div class="result-header">
                 <div class="result-icon success">
                   <i class="fas fa-video"></i>
@@ -1636,7 +1631,7 @@
       function showError(message) {
         const resultContent = document.getElementById("resultContent");
         resultContent.innerHTML = `
-          <div class="result-card fade-in-up">
+          <div class="result-card">
             <div class="result-header">
               <div class="result-icon error">
                 <i class="fas fa-exclamation-triangle"></i>
@@ -1658,8 +1653,8 @@
       function getColorForClass(className) {
         const colors = {
           red: "#ef4444",
-          green: "#10b981",
-          yellow: "#f59e0b",
+          green: "#4ade80",
+          yellow: "#fbbf24",
         };
         return colors[className] || "#6b7280";
       }
