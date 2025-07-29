@@ -14,7 +14,7 @@ import base64
 import uuid
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__ , template_folder="../templates",static_folder=None)
+app = Flask(__name__ , template_folder="../templates",static_folder="uploads")
 app.config['UPLOAD_FOLDER'] = 'uploads'
 app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024  # 20MB max file size
 
@@ -912,10 +912,10 @@ def test_video():
     except Exception as e:
         return jsonify({'error': str(e)})
 
-@app.route('/uploads/<path:filename>')
+@app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    uploads_dir = os.path.join(app.root_path, 'uploads')
-    return send_from_directory(uploads_dir, filename)
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
+
 
 if __name__ == '__main__':
     import os
